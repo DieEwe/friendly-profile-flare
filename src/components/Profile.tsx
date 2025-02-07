@@ -7,11 +7,6 @@ interface ProfileProps {
   role: string;
   bio: string;
   avatar: string;
-  stats: {
-    followers: number;
-    following: number;
-    projects: number;
-  };
   social: {
     github?: string;
     twitter?: string;
@@ -46,7 +41,7 @@ const Profile = ({
         </div>
 
         {/* Bio */}
-        <p className="text-center text-gray-600 mb-6">{bio}</p>
+        <p className="text-center text-profile-neutral mb-6">{bio}</p>
 
         {/* Social Links */}
         <div className="flex justify-center gap-4 mb-6">
@@ -65,7 +60,7 @@ const Profile = ({
               href={social.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-profile-neutral hover:text-profile-accent transition-colors duration-200"
+              className="text-profile-neutral hover:text-profile-secondary transition-colors duration-200"
             >
               <Twitter className="w-5 h-5" />
             </a>
@@ -75,7 +70,7 @@ const Profile = ({
               href={social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-profile-neutral hover:text-profile-accent transition-colors duration-200"
+              className="text-profile-neutral hover:text-profile-tertiary transition-colors duration-200"
             >
               <Linkedin className="w-5 h-5" />
             </a>
@@ -84,7 +79,7 @@ const Profile = ({
 
         {/* Contact Button */}
         <Button
-          className="w-full bg-profile-accent hover:bg-profile-accent/90 text-profile-light transition-all duration-300 hover:shadow-md"
+          className="w-full bg-profile-accent hover:bg-profile-accent/90 text-profile-dark transition-all duration-300 hover:shadow-md"
           onClick={() => window.location.href = "mailto:contact@example.com"}
         >
           <Mail className="w-4 h-4 mr-2" />

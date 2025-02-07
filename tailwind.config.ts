@@ -26,7 +26,10 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         profile: {
-          accent: "#9b87f5",
+          accent: "#39b2c1", // Türkis
+          secondary: "#f84d42", // Rot
+          tertiary: "#fbc12c", // Gelb
+          quaternary: "#fba82b", // Orange
           neutral: "#8E9196",
           light: "#f8f9fa",
           dark: "#1A1F2C",
