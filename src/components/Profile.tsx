@@ -7,6 +7,10 @@ interface ProfileProps {
   role: string;
   bio: string;
   avatar: string;
+  disability?: {
+    status: "visible" | "non-visible" | "none";
+  };
+  userRole: "coach" | "mentor" | "admin";
   social: {
     github?: string;
     twitter?: string;
@@ -19,6 +23,8 @@ const Profile = ({
   role,
   bio,
   avatar,
+  disability,
+  userRole,
   social,
 }: ProfileProps) => {
   return (
@@ -38,6 +44,16 @@ const Profile = ({
         <div className="text-center mb-6">
           <h2 className="text-2xl font-semibold text-profile-dark mb-1">{name}</h2>
           <p className="text-profile-neutral">{role}</p>
+          <div className="flex items-center justify-center gap-2 mt-2">
+            <span className="text-sm px-3 py-1 rounded-full bg-profile-accent/10 text-profile-accent">
+              {userRole}
+            </span>
+            {disability && disability.status !== "none" && (
+              <span className="text-sm px-3 py-1 rounded-full bg-profile-secondary/10 text-profile-secondary">
+                {disability.status} disability
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Bio */}
