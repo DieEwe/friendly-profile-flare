@@ -24,7 +24,6 @@ const Profile = ({
   role,
   bio,
   avatar,
-  stats,
   social,
 }: ProfileProps) => {
   return (
@@ -44,16 +43,6 @@ const Profile = ({
         <div className="text-center mb-6">
           <h2 className="text-2xl font-semibold text-profile-dark mb-1">{name}</h2>
           <p className="text-profile-neutral">{role}</p>
-        </div>
-
-        {/* Stats */}
-        <div className="flex justify-center gap-8 mb-6 py-4 border-y border-gray-100">
-          {Object.entries(stats).map(([key, value]) => (
-            <div key={key} className="text-center">
-              <p className="text-xl font-semibold text-profile-accent">{value}</p>
-              <p className="text-sm text-profile-neutral capitalize">{key}</p>
-            </div>
-          ))}
         </div>
 
         {/* Bio */}
@@ -95,7 +84,7 @@ const Profile = ({
 
         {/* Contact Button */}
         <Button
-          className="w-full bg-profile-accent hover:bg-profile-accent/90 text-white transition-all duration-300 hover:shadow-md"
+          className="w-full bg-profile-accent hover:bg-profile-accent/90 text-profile-light transition-all duration-300 hover:shadow-md"
           onClick={() => window.location.href = "mailto:contact@example.com"}
         >
           <Mail className="w-4 h-4 mr-2" />
