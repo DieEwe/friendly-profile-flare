@@ -45,11 +45,11 @@ const Profile = ({
           <h2 className="text-2xl font-semibold text-profile-dark mb-1">{name}</h2>
           <p className="text-profile-neutral">{role}</p>
           <div className="flex items-center justify-center gap-2 mt-2">
-            <span className="text-sm px-3 py-1 rounded-full bg-profile-accent/10 text-profile-accent">
+            <span className="text-sm px-3 py-1 rounded-full bg-[#1A1F2C] text-white font-medium">
               {userRole}
             </span>
             {disability && disability.status !== "none" && (
-              <span className="text-sm px-3 py-1 rounded-full bg-profile-secondary/10 text-profile-secondary">
+              <span className="text-sm px-3 py-1 rounded-full bg-[#403E43] text-white font-medium">
                 {disability.status} disability
               </span>
             )}
